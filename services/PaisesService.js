@@ -42,7 +42,7 @@ class PaisService {
   }
 
   static async buscarPais(nome) {
-    const response = await axios.get(`https://restcountries.com/v3.1/name/${nome}?fields=name,capital,region,population,area,flags`);
+    const response = await axios.get(`https://restcountries.com/v3.1/name/${nome}?fields=name,capital,region,population`);
     const country = response.data[0];
 
     const votos = await this.pegarVotos(country.name.common);
